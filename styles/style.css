@@ -1,5 +1,23 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  height: 100vh;
+  background-color: var(--background-color);
+  background-image: url(../images/cover-image-dark.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+  grid-auto-flow: column;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  flex-wrap: wrap;
 }

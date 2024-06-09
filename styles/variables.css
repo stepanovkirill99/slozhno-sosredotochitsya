@@ -1,4 +1,4 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+    --background-color: #000028;
+    --font-family: 'IBM Plex mono', system-ui, sans-serif;
+}
