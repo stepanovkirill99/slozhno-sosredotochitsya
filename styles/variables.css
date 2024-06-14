@@ -1,4 +1,11 @@
 :root {
     --background-color: #000028;
-    --font-family: 'IBM Plex mono', system-ui, sans-serif;
+    --background-image: url(../images/cover-image-dark.png);
+    --font-text: 'IBM Plex mono', system-ui, sans-serif;
+    --color-accent-title: #db00ff;
+    --color-accent-text-title:  #000028;
+    --color-accent-black-theme: #ff0070;
+    --color-text-black-theme: #f1b2ce;
+    --font-size-s: 18px;
+    --font-size-l: 120px;
 }

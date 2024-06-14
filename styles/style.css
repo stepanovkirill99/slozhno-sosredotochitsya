@@ -1,23 +1,212 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  height: 100vh;
+  padding: 10px;
+  font-family: var(--font-text);
+  font-size: var(--font-size-s);
+  font-weight: 400;
+  color: var( --color-text-black-theme);
   background-color: var(--background-color);
-  background-image: url(../images/cover-image-dark.png);
+  background-image: var(--background-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .header {
+  height: 100vh;
   display: grid;
-  grid-template-rows: repeat(2, max-content);
-  grid-auto-flow: column;
+  grid-template-rows: 1fr min-content 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.rec-point {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  text-transform: uppercase;
+  color: var(--color-accent-black-theme);
+}
+
+.rec-point::after {
+  position: relative;
+  top: -2px;
+  right: -12px;
+  content: "";
+  font-family: var(--font-text);
+  display: inline-block ;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--color-accent-black-theme);
+  box-shadow: 0 0 4px 2px #ff0070;
+}
+
+.decorated-zone::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-right: 1px solid var(--color-accent-black-theme) ;
+  border-top: 1px solid var(--color-accent-black-theme) ;
+}
+
+.decorated-zone::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  border-left: 1px solid var(--color-accent-black-theme) ;
+  border-bottom: 1px solid var(--color-accent-black-theme) ;
+}
+
+.header__theme-menu {
+  display: flex;
+  justify-content: end;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
   align-content: flex-end;
-  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.header__theme-menu-button{
+  height: 26px;
+  width: 70px;
+  padding: 0 13px;
+  color: var(--color-accent-black-theme);
+  text-transform: lowercase;
+  border: 1px solid transparent;
+  background: none;
+}
+
+.title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 83%;
+  color: var(--color-accent-title);
+  text-shadow: 4px 4px 0 var(--color-accent-black-theme);
+}
+
+.text-title {
+  width: 100%;
+  min-width: 355px;
+  justify-self: end;
+  font-weight: 700;
+  line-height: 130%;
+  color: var(--color-accent-text-title);
+}
+
+.title-decor {
+  background-color: var(--color-accent-black-theme);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.question-answer {
+  display: grid;
+  gap: 20px;
+}
+
+.accent-title {
+  display: flex;
+  color: var(--color-accent-black-theme);
+  font-size: var(--font-size-s);
+  font-weight: 700;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-title {
+  color: var(--color-accent-text-title);
+  font-weight: 700;
+  font-size: var(--font-size-s);
+}
+
+.card-text {
+  padding-top: 10px;
+  color: var(--font-text);
+  line-height: 130%;
+}
+
+.card-text-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--color-accent-black-theme);
+}
+
+.card-subtitle {
+  color: var(--color-accent-text-title);
+  font-weight: 400;
+  font-size: var(--font-size-s);
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+}
+
+.images {
+  display: grid;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 83%;
+  color: var(--color-accent-title);
+  text-shadow: 4px 4px 0 var(--color-accent-black-theme);
+}
+
+/* Для экранов 768 */
+
+@media (min-width: 768px) and (max-width: 1023.99px) {
+  .page {
+    padding: 20px;
+  }
+
+  .header {
+    gap: 162px;
+  }
+
+  .header__theme-menu {
+    justify-self: end;
+    align-items: end;
+    padding-bottom: 10px;
+  }
 }
