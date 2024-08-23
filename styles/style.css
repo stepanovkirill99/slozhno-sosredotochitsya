@@ -1,7 +1,6 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  padding: 10px;
   font-family: var(--font-text);
   font-size: var(--font-size-s);
   font-weight: 400;
@@ -15,11 +14,13 @@
 }
 
 .header {
+  padding: 10px;
+  position: relative;
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .rec-point {
@@ -52,7 +53,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  border-right: 1px solid var(--color-corner) ;
+  border-inline-end: 1px solid var(--color-corner) ;
   border-top: 1px solid var(--color-corner) ;
 }
 
@@ -64,7 +65,7 @@
   position: absolute;
   left: 10px;
   bottom: 10px;
-  border-left: 1px solid var(--color-corner) ;
+  border-inline-start: 1px solid var(--color-corner) ;
   border-bottom: 1px solid var(--color-corner) ;
 }
 
@@ -82,12 +83,13 @@
 .header__theme-menu-button{
   height: 26px;
   width: 70px;
-  padding: 0 13px;
-  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 2px 13px;
   color: var(--color-menu);
   text-transform: lowercase;
+  background-color: transparent;
   border: 1px solid transparent;
-  background: none;
 }
 
 .header__theme-menu-button:focus {
@@ -95,11 +97,11 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border: 1px solid var(--color-menu);
+  border-block-end: 1px solid var(--color-menu);
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--color-menu);
+  border: 1px solid var(--color-menu-hover);
 }
 
 .header__theme-menu-button_active {
@@ -132,7 +134,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding: 40px 0;
+  padding: 40px 10px;
 }
 
 .question-answer {
@@ -207,7 +209,7 @@
 .footer {
   position: relative;
   height: 100vh;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
 }
@@ -222,13 +224,12 @@
 
 /* Для экранов 768 */
 
-@media (min-width: 768px) and (max-width: 1023.99px) {
-  .page {
-    padding: 20px;
-  }
+@media (min-width: 768px) and (max-width: 1023px) {
 
   .header {
+    padding: 20px;
     gap: 162px;
+    justify-content: normal;
   }
 
   .decorated-zone::before {
@@ -236,19 +237,19 @@
     right: 20px;
   }
 
-  .decorated-zone::after {
+  .decorated-zone::after {  
     bottom: 20px;
     left: 20px;
   }
 
   .rec-point {
-    top: 21px;
+    top: 23px;
     right: 40px;
   }
   
   .rec-point::after {
-    top: -1px;
-    right: -11px;
+    top: -4px;
+    right: -12px;
   }
 
   .header__theme-menu {
@@ -262,12 +263,178 @@
   .title {
     position: relative;
     right: 20px;
-    padding-top: 0;
+    /* padding-top: 0; */
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .title_description {
+  .text-title {
     width: 100%;
     max-width: 364px;
   }
+
+  .main {
+    gap: 80px;
+    padding: 60px 20px;
+  }
+
+  .why {
+    grid-template-columns: 1fr 472px;
+    gap: 20px;
+  }
+
+  .what {
+    grid-template-rows: min-content 1fr;
+    gap:20px;
+  }
+
+  .what > .accent-title {
+    width: 236px;
+  }
+
+  .how {
+    grid-template-columns: 1fr 472px;
+    gap: 20px;
+  }
+
+  .gallery {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .images {
+    padding-top: 0;
+    height: 780px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 24.5% 29.5% 41%;
+    gap: 20px;
+    }
+
+  .image-1 {
+    grid-column: 1/3;
+  }
+
+  .image-2 {
+    grid-column: 3/4;
+    grid-row: 1/3;
+  }
+
+  .image-3 {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+
+  .image-4 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .image-5 {
+    grid-column: 2/4;
+    grid-row: 3/4;
+  }
+}
+
+@media (min-width: 1024px), (aspect-ratio: 16 / 9) {
+
+  .header {
+    justify-content: normal;
+    align-items: start;
+    gap: 114px;
+    padding: 20px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self:flex-start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .title {
+    position: relative;
+    right: 20px;
+  }
+
+  .text-title {
+    max-width: 50%;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {  
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .rec-point {
+    top: 23px;
+    right: 40px;
+  }
+  
+  .rec-point::after {
+    top: -4px;
+    right: -12px;
+  }
+
+  .main {
+    padding: 60px 20px;
+  }
+
+  .why {
+    grid-template-columns: 1fr 648px;
+  }
+
+  .what > .accent-title {
+    width: 315px;
+  }
+
+  .what > .card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .how {
+    grid-template-columns: 1fr 648px;
+  }
+
+  .gallery {
+    gap: 20px;
+  }
+
+  .images {
+    padding-top: 0;
+    gap: 20px;
+    grid-template-rows: 25% 30% 41%;
+  }
+
+  .image-1 {
+    grid-column: 1/3;
+  }
+
+  .image-2 {
+    grid-column: 3/4;
+    grid-row: 1/3;
+  }
+
+  .image-3 {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+
+  .image-4 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .image-5 {
+    grid-column: 2/4;
+    grid-row: 3/4;
+  } 
 }
