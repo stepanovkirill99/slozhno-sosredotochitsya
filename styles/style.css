@@ -450,9 +450,3 @@
     font-size: 157px;
   }
 }
-
-@media (prefers-color-scheme: light) {
-  .page.theme_light .rec-point {
-    display: none;
-  }
-}
