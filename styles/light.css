@@ -35,9 +35,9 @@
     --color-accent-text:  #353430;
     --color-accent-theme: #353430;
     --color-text-theme: #353430;   
-    }
+  }
 
-    .page.theme_auto .rec-point {
+  .page.theme_auto .rec-point {
       display: none;
-    }    
+  }    
 } 
