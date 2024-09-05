@@ -150,6 +150,7 @@
   color: var(--color-accent-theme);
   font-size: var(--font-size-s);
   font-weight: 700;
+  line-height: 130%;
 }
 
 .card {
@@ -171,7 +172,7 @@
 
 .card-text-link {
   text-decoration: none;
-  text-shadow: 2px 2px 0 var(--color-shadow);
+  text-shadow: 2px 2px 0 var(--color-decor);
 }
 
 .card-text-link:hover {
@@ -231,8 +232,10 @@
 @media (min-width: 768px) and (max-width: 1023px) {
 
   .header {
+    display: grid;
+    grid-template-rows: 1fr min-content 1fr;
+    align-items: center;
     padding: 20px;
-    gap: 162px;
     justify-content: normal;
   }
 
@@ -257,8 +260,7 @@
   }
 
   .header__theme-menu {
-    align-self: end;
-    margin-bottom: 11px;
+    align-self: center;
   }
 
   .header__theme-menu-list {
@@ -274,7 +276,7 @@
   .text-title {
     width: 100%;
     max-width: 364px;
-    align-self: flex-start;
+    align-self: center;
   }
 
   .main {
@@ -343,7 +345,7 @@
 
   .header {
     display: grid;
-    grid-template-rows: repeat(1fr);
+    grid-template-rows: 1fr min-content 1fr;
     justify-content: normal;
     align-items: center;
     padding: 20px;
@@ -360,13 +362,14 @@
   }
 
   .title {
-    font-size: 157px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     position: relative;
     right: 20px;
   }
 
   .text-title {
     max-width: 50%;
+    align-self: center;
   }
 
   .decorated-zone::before {
@@ -447,6 +450,6 @@
   } 
 
   .footer-title {
-    font-size: 157px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
